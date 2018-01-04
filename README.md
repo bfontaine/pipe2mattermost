@@ -15,12 +15,12 @@ login yourlogin@company.com
 password topsecret
 ```
 
-If this is the first time you use this file make sure you’re the only one with
-read/write access.
+Warning: If this is the first time you use this file make sure you’re the only
+one with read/write access.
 
 ## Usage
 
-    $ tail -f | pipe2mattermost [-update] <server URL> <channel slug>
+    $ tail -f my.log | pipe2mattermost [-update] <server URL> <channel slug>
 
 If `-update` is passed it’ll continuously update the same message instead of
 posting multiple ones.
