@@ -1,9 +1,8 @@
 # Pipe2Mattermost
 
-**pipe2mattermost** is a simple CLI tool that pipes its stdin into
-[Mattermost][].
+**pipe2mattermost** is a simple CLI tool that pipes its stdin into [Mattermost][].
 
-[Mattermost]: https://about.mattermost.com/
+[Mattermost]: https://mattermost.com/
 
 ## Setup
 
@@ -15,15 +14,12 @@ login yourlogin@company.com
 password topsecret
 ```
 
-Warning: If this is the first time you use this file make sure you’re the only
-one with read/write access.
+Warning: this file is plain text; use `chmod 0600` or similar to ensure you’re the only one who can access it.
 
 ## Usage
 
     $ tail -f my.log | pipe2mattermost [-update] <server URL> <channel slug>
 
-If `-update` is passed it’ll continuously update the same message instead of
-posting multiple ones.
+If `-update` is passed it continuously updates the same message instead of posting multiple ones.
 
-Each line read is posted as a message. There’s no frequency limit so it’ll post
-each line as soon as it reads it.
+Each line read is posted as a message. There’s no frequency limit so it posts each line as soon as it reads it.
