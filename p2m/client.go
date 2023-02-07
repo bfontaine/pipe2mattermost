@@ -3,17 +3,15 @@ package p2m
 import (
 	"bufio"
 	"errors"
+	"github.com/jdxcode/netrc"
+	"github.com/mattermost/platform/model"
 	"io"
 	"os/user"
 	"path/filepath"
-
-	"github.com/dickeyxxx/netrc"
-	"github.com/mattermost/platform/model"
 )
 
 type Client struct {
-	m *model.Client4
-
+	m    *model.Client4
 	self *model.User
 }
 
@@ -30,12 +28,12 @@ func (c *Client) Login() error {
 		return err
 	}
 
-	user, resp := c.m.Login(login, password)
-	if user == nil {
+	clientUser, resp := c.m.Login(login, password)
+	if clientUser == nil {
 		return resp.Error
 	}
 
-	c.self = user
+	c.self = clientUser
 
 	return nil
 }

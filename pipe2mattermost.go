@@ -2,10 +2,9 @@ package main
 
 import (
 	"flag"
+	"github.com/bfontaine/pipe2mattermost/p2m"
 	"log"
 	"os"
-
-	"github.com/oscaro/pipe2mattermost/p2m"
 )
 
 func main() {
